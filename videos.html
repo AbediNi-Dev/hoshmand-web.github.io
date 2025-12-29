@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سرفصل‌های دوره سواد رسانه و امنیت | هوشمند نما</title>
+    
+    <meta name="description" content="فهرست کامل ۱۸ درس کاربردی آموزش سواد رسانه‌ای و امنیت سایبری در ۳ فاز تخصصی.">
+    <meta name="theme-color" content="#2563eb">
+
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --bg-white: #ffffff;
+            --border: #e5e7eb;
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        header {
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .search-container {
+            padding: 0 20px 15px;
+            display: none;
+            animation: slideDown 0.3s ease-out;
+            position: relative;
+        }
+
+        .search-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            outline: none;
+            font-size: 0.9rem;
+            background: var(--primary-light);
+        }
+
+        .close-search {
+            position: absolute;
+            left: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .main-container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-banner {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            aspect-ratio: 2 / 1; 
+            background: #f3f4f6;
+        }
+        
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .phase-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 30px 0 15px 0;
+            padding: 10px;
+            border-right: 4px solid var(--primary);
+            background-color: var(--primary-light);
+            border-radius: 8px;
+        }
+
+        .video-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .video-header {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .video-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .play-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-text h3 { font-size: 0.95rem; font-weight: 700; }
+        .video-text span { font-size: 0.75rem; color: var(--text-gray); }
+
+        .video-summary {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #f9fafb;
+        }
+
+        .summary-inner {
+            padding: 15px;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .action-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-gray);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <a href="index.html" class="icon-btn" style="border:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </a>
+            <div class="logo">هوشمند نما</div>
+            <div class="icon-btn" onclick="toggleSearch()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+        </div>
+        <div class="search-container" id="searchBox">
+            <div class="search-wrapper">
+                <input type="text" class="search-input" id="searchInput" placeholder="جستجوی درس..." onkeyup="liveSearch()">
+                <button class="close-search" onclick="toggleSearch()">×</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="hero-banner">
+            <img src="https://git-line.ir/1765693698885.jpg" alt="دوره سواد رسانه">
+        </div>
+
+        <div class="page-header">
+            <h1>سرفصل‌های آموزشی</h1>
+            <p>۱۸ جلسه تخصصی سواد رسانه و امنیت سایبری</p>
+        </div>
+
+        <div id="course-list"></div>
+        <div id="noResult" class="no-result">موردی یافت نشد...</div>
+    </main>
+
+    <script>
+        const phases = [
+            {
+                title: "فاز اول: مبانی سواد رسانه و تحلیل پیام",
+                episodes: [
+                    { title: "رسانه چیست؟ پیام پنهان کجاست؟", summary: "درک تفاوت بین محتوای ظاهری و اهداف پشت پرده رسانه‌ها." },
+                    { title: "تیترهای زرد و دام کلیک", summary: "شناخت تکنیک‌های کلیک‌بیت و عناوین فریبنده." },
+                    { title: "الگوریتم‌ها چطور ما را می‌شناسند؟", summary: "بررسی نحوه عملکرد شبکه‌های اجتماعی در پیشنهاد محتوا." },
+                    { title: "تشخیص سریع اخبار جعلی", summary: "تکنیک‌های اعتبارسنجی منبع و شواهد در کمتر از یک دقیقه." },
+                    { title: "جستجوی معکوس تصاویر", summary: "پیدا کردن منبع اصلی عکس‌ها برای جلوگیری از فریب." },
+                    { title: "ردپای دیجیتال و استخدام در آینده", summary: "چطور کارهایی که امروز در فضای مجازی انجام می‌دهیم، روی قبولی در دانشگاه یا استخدام ما در آینده تاثیر می‌گذارد." }
+                ]
+            },
+            {
+                title: "فاز دوم: امنیت سایبری و حریم خصوصی",
+                episodes: [
+                    { title: "ساخت رمز عبور ضد هک", summary: "فرمول ساخت رمزهای عبور طولانی و غیرقابل حدس." },
+                    { title: "احراز هویت دو مرحله‌ای (2FA)", summary: "فعال‌سازی لایه دوم امنیتی برای جلوگیری از نفوذ." },
+                    { title: "شناسایی لینک‌های آلوده", summary: "چطور در یک نگاه بفهمیم یک لینک حاوی بدافزار است." },
+                    { title: "مجوزهای پنهان اپلیکیشن‌ها", summary: "بررسی دسترسی‌های غیرضروری برنامه‌های گوشی." },
+                    { title: "خطرات وای‌فای عمومی", summary: "نکات امنیتی حیاتی هنگام اتصال به اینترنت مکان‌های عمومی."},
+                    { title: "چرا و چگونه هک می‌شویم؟", summary: "آشنایی با رات‌ها و شناسه دزدها در شبکه‌های اجتماعی." }
+                ]
+            },
+            {
+                title: "فاز سوم: هوش مصنوعی و اخلاق دیجیتال",
+                episodes: [
+                    { title: "تشخیص تصاویر هوش مصنوعی", summary: "نشانه‌های بصری برای تشخیص عکس‌های تولید شده توسط AI." },
+                    { title: "خطر دیپ‌فیک (Deepfake)", summary: "آشنایی با تکنولوژی جعل چهره و صدا در ویدئوها." },
+                    { title: "تفکر انتقادی در فضای مجازی", summary: "پرسش‌های کلیدی قبل از باور کردن یا بازنشر محتوا." },
+                    { title: "مقابله با آزار سایبری", summary: "روش‌های برخورد با توهین و آزار آنلاین." },
+                    { title: "حق کپی‌رایت و استفاده مجاز", summary: "قوانین حق مؤلف در فضای دیجیتال." },
+                    { title: "شهروند دیجیتال مسئول", summary: "نقش فردی در ایجاد فضای مجازی سالم." }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('course-list');
+        let globalCounter = 1;
+
+        phases.forEach(phase => {
+            const phaseTitle = document.createElement('h2');
+            phaseTitle.className = 'phase-title';
+            phaseTitle.textContent = phase.title;
+            container.appendChild(phaseTitle);
+
+            phase.episodes.forEach(ep => {
+                const item = document.createElement('div');
+                item.className = 'video-item';
+                item.innerHTML = `
+                    <div class="video-header" onclick="toggleItem(this)">
+                        <div class="video-info">
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            </div>
+                            <div class="video-text">
+                                <h3 class="title-text">${ep.title}</h3>
+                                <span>جلسه ${globalCounter} - آموزشی</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-summary">
+                        <div class="summary-inner">
+                            <p>${ep.summary}</p>
+                            <a href="#" class="action-btn">مشاهده ویدیو</a>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(item);
+                globalCounter++;
+            });
+        });
+
+        function toggleSearch() {
+            const box = document.getElementById('searchBox');
+            const input = document.getElementById('searchInput');
+            
+            if (box.style.display === 'block') {
+                box.style.display = 'none';
+                input.value = "";
+                liveSearch(); 
+            } else {
+                box.style.display = 'block';
+                input.focus();
+            }
+        }
+
+        function liveSearch() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.video-item');
+            const titles = document.querySelectorAll('.phase-title');
+            let hasVisible = false;
+
+            items.forEach(item => {
+                const text = item.querySelector('.title-text').textContent.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.display = 'block';
+                    hasVisible = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            titles.forEach(t => t.style.display = input === "" ? 'block' : 'none');
+            document.getElementById('noResult').style.display = hasVisible ? 'none' : 'block';
+        }
+
+        function toggleItem(element) {
+            const parent = element.parentElement;
+            const content = parent.querySelector('.video-summary');
+            const isActive = parent.classList.contains('active');
+            
+            document.querySelectorAll('.video-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.video-summary').style.maxHeight = null;
+            });
+
+            if (!isActive) {
+                parent.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>
