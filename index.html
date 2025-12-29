@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>هوشمند نما | پلتفرم تخصصی ارتقای سواد رسانه‌ای و امنیت سایبری</title>
-    <meta name="description" content="هوشمند نما؛ مرجع آموزش تخصصی سواد رسانه‌ای، امنیت حریم خصوصی و تفکر انتقادی ویژه دانش‌آموزان و نوجوانان. آموزش مقابله با فیشینگ و مدیریت حضور در فضای مجازی.">
-    <meta name="keywords" content="سواد رسانه ای، امنیت دیجیتال، حریم خصوصی، جشنواره خوارزمی، هوش مصنوعی، شناسایی فیشینگ، تفکر انتقادی">
+    <meta name="description" content="هوشمند نما؛ مرجع آموزش تخصصی سواد رسانه‌ای، امنیت حریم خصوصی و تفکر انتقادی ویژه دانش‌آموزان و نوجوانان. آموزش مقابله با فیشینگ و مدیریت حضور در فضای مجازی با ۱۸ جلسه آموزشی کوتاه و کاربردی.">
+    <meta name="keywords" content="سواد رسانه ای، امنیت دیجیتال، حریم خصوصی، جشنواره خوارزمی، هوش مصنوعی، شناسایی فیشینگ، تفکر انتقادی، آموزش امنیت سایبری نوجوانان">
     <meta name="author" content="امیرمهدی عابدینی">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://abedini-dev.github.io/">
 
-    <meta property="og:title" content="هوشمند نما | آموزش جامع سواد رسانه و امنیت">
-    <meta property="og:description" content="ارائه راهکارهای کاربردی جهت حضور هوشمندانه و ایمن در زیست‌بوم دیجیتال.">
+    <meta property="og:title" content="هوشمند نما | آموزش جامع سواد رسانه و امنیت دیجیتال">
+    <meta property="og:description" content="۱۸ جلسه آموزشی کوتاه و کاربردی برای ارتقای سواد رسانه‌ای و امنیت سایبری نوجوانان و دانش‌آموزان.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/16VU6m-APrS_4me0LJ4JRgoSUrGQqZPow">
 
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
 
@@ -29,6 +31,26 @@
             --radius: 16px;
         }
 
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #fcd34d;
+                --primary-light: #fffbeb;
+                --text-dark: #f3f4f6;
+                --text-gray: #9ca3af;
+                --bg-white: #000000;
+                --border: #374151;
+            }
+        }
+
+        .dark-mode {
+            --primary: #fcd34d;
+            --primary-light: #fffbeb;
+            --text-dark: #f3f4f6;
+            --text-gray: #9ca3af;
+            --bg-white: #000000;
+            --border: #374151;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -38,13 +60,14 @@
         }
 
         body {
-            background-color: #ffffff;
+            background-color: var(--bg-white);
             color: var(--text-dark);
             line-height: 1.6;
             padding-bottom: 20px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         a { text-decoration: none; color: inherit; }
@@ -55,11 +78,12 @@
             align-items: center;
             justify-content: space-between;
             padding: 15px 20px;
-            background: #fff;
+            background: var(--bg-white);
             position: sticky;
             top: 0;
             z-index: 100;
             border-bottom: 1px solid var(--border);
+            transition: background-color 0.3s, border-color 0.3s;
         }
 
         .header-left {
@@ -76,8 +100,14 @@
             align-items: center;
             justify-content: center;
             color: var(--primary);
-            background: #fff;
+            background: var(--bg-white);
             cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle {
+            border: none;
+            background: transparent;
         }
 
         .logo {
@@ -86,6 +116,7 @@
             color: var(--primary);
             letter-spacing: -1px;
             text-align: center;
+            transition: color 0.3s;
         }
 
         .hero {
@@ -177,7 +208,7 @@
             font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 5px;
-            background: #fff;
+            background: var(--bg-white);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -186,6 +217,7 @@
             justify-content: center;
             margin: 0 auto 5px;
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+            transition: all 0.3s;
         }
 
         .stat-num {
@@ -193,11 +225,13 @@
             color: var(--primary);
             direction: ltr;
             display: block;
+            transition: color 0.3s;
         }
 
         .stat-label {
             font-size: 0.8rem;
             color: var(--text-gray);
+            transition: color 0.3s;
         }
 
         .section-title {
@@ -226,8 +260,8 @@
             border-radius: 20px;
             padding: 20px;
             text-align: center;
-            background: #fff;
-            transition: 0.3s;
+            background: var(--bg-white);
+            transition: all 0.3s;
         }
 
         .cat-card:hover {
@@ -240,6 +274,7 @@
             height: 40px;
             margin: 0 auto 10px;
             color: var(--primary);
+            transition: color 0.3s;
         }
         svg { width: 100%; height: 100%; }
 
@@ -247,6 +282,7 @@
             font-weight: bold;
             font-size: 0.85rem;
             color: var(--text-dark);
+            transition: color 0.3s;
         }
 
         .features-section {
@@ -263,7 +299,8 @@
             align-items: flex-start;
             justify-content: space-between;
             padding: 15px 0;
-            border-bottom: 1px solid #f3f4f6;
+            border-bottom: 1px solid var(--border);
+            transition: border-color 0.3s;
         }
 
         .feature-item:last-child { border: none; }
@@ -280,6 +317,7 @@
             justify-content: center;
             flex-shrink: 0;
             margin-top: 4px;
+            transition: background 0.3s;
         }
 
         .feature-text {
@@ -306,11 +344,12 @@
             max-width: 350px;
             white-space: normal;
             border: 1px solid var(--primary-light);
-            background: #fff;
+            background: var(--bg-white);
             border-radius: 20px;
             padding: 25px;
             position: relative;
             box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            transition: all 0.3s;
         }
 
         .quote-icon {
@@ -321,6 +360,7 @@
             top: 20px;
             left: 20px;
             font-family: serif;
+            transition: color 0.3s;
         }
 
         .quote-text {
@@ -328,12 +368,14 @@
             line-height: 1.8;
             color: var(--text-dark);
             margin-bottom: 20px;
+            transition: color 0.3s;
         }
 
         .quote-author {
             color: var(--primary);
             font-weight: bold;
             font-size: 0.9rem;
+            transition: color 0.3s;
         }
 
         footer {
@@ -343,6 +385,7 @@
             border-top: 1px solid var(--border);
             font-size: 0.85rem;
             color: var(--text-gray);
+            transition: all 0.3s;
         }
 
         @media (min-width: 768px) {
@@ -385,11 +428,8 @@
     </div>
     <div class="logo">هوشمند نما</div>
     <div class="header-left">
-        <div class="icon-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </div>
-        <div class="icon-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <div class="icon-btn theme-toggle" onclick="document.body.classList.toggle('dark-mode')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         </div>
     </div>
 </header>
@@ -397,7 +437,7 @@
 <main>
     <section class="hero">
         <div class="hero-banner">
-            <img src="https://lh3.googleusercontent.com/d/16VU6m-APrS_4me0LJ4JRgoSUrGQqZPow" alt="دوره تخصصی ارتقای سواد رسانه‌ای" loading="lazy">
+            <img src="https://lh3.googleusercontent.com/d/16VU6m-APrS_4me0LJ4JRgoSUrGQqZPow" alt="دوره تخصصی ارتقای سواد رسانه‌ای و امنیت سایبری هوشمند نما" loading="lazy">
         </div>
         <h1>امنیت دیجیتال و سواد رسانه‌ای<br>پیش‌نیاز نسل هوشمند</h1>
         <p>توسعه مهارت‌های تفکر انتقادی و صیانت از حریم خصوصی در فضای مجازی با استانداردهای نوین آموزشی.</p>
@@ -419,15 +459,15 @@
                 <div class="stat-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 </div>
-                <span class="stat-num">30 دقیقه</span>
-                <span class="stat-label">مدت زمان آموزش</span>
+                <span class="stat-num">20 دقیقه</span>
+                <span class="stat-label">مدت زمان دوره</span>
             </div>
             <div class="stat-item">
                 <div class="stat-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
-                <span class="stat-num">120K+</span>
-                <span class="stat-label">دانش‌آموز فعال</span>
+                <span class="stat-num">مدرس</span>
+                <span class="stat-label">امیرمهدی عابدینی</span>
             </div>
         </div>
     </section>
@@ -469,7 +509,7 @@
     <section class="features-section">
         <div class="section-title" style="text-align: right;">
             <h2>اهداف راهبردی پلتفرم هوشمند نما</h2>
-            <p style="margin-top: 10px;">رسالت ما ارتقای شاخص‌های سواد رسانه‌ای در سطح عمومی جامعه است. در دنیای امروز، عدم آگاهی از ماهیت اخبار جعلی (Fake News) منجر به پذیرش و بازنشر شایعات می‌گردد که پیامدهای اجتماعی نامطلوبی به همراه دارد. پلتفرم هوشمند وب با رویکردی پیشگیرانه، به دنبال توانمندسازی آحاد جامعه در برابر تهدیداتی نظیر فیشینگ، نفوذ به حساب‌های کاربری و مهندسی اجتماعی است. ما بر این باوریم که با افزایش سطح سواد رسانه‌ای، شهروندان می‌توانند با اتکا به تفکر انتقادی، محیطی امن و آرام را در زیست‌بوم دیجیتال برای خود و دیگران فراهم سازند.</p>
+            <p style="margin-top: 10px;">رسالت ما ارتقای شاخص‌های سواد رسانه‌ای در سطح عمومی جامعه است. در دنیای امروز، عدم آگاهی از ماهیت اخبار جعلی (Fake News) منجر به پذیرش و بازنشر شایعات می‌گردد که پیامدهای اجتماعی نامطلوبی به همراه دارد. پلتفرم هوشمند نما با رویکردی پیشگیرانه، به دنبال توانمندسازی آحاد جامعه در برابر تهدیداتی نظیر فیشینگ، نفوذ به حساب‌های کاربری و مهندسی اجتماعی است. ما بر این باوریم که با افزایش سطح سواد رسانه‌ای، شهروندان می‌توانند با اتکا به تفکر انتقادی، محیطی امن و آرام را در زیست‌بوم دیجیتال برای خود و دیگران فراهم سازند.</p>
         </div>
 
         <div class="feature-list">
@@ -515,6 +555,21 @@
 <footer>
     <p>تمامی حقوق مادی و معنوی این پلتفرم متعلق به <b>امیرمهدی عابدینی</b>، توسعه‌دهنده و کدنویس ارشد سایت می‌باشد.</p>
 </footer>
+
+<script>
+    // حفظ حالت دارک مود در localStorage
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+    document.querySelector('.theme-toggle').addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+</script>
 
 </body>
 </html>
